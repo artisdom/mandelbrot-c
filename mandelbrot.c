@@ -69,6 +69,7 @@ void* make_mandelbrot_pixbuf(void* args) {
         }
         gdk_threads_enter();
         gdk_draw_pixbuf(canvas->window, gc, mandelPb, 0, r, 0, r, WINDOW_WIDTH, 1, GDK_RGB_DITHER_NONE, 0, 0);
+        gdk_flush();
         gdk_threads_leave();
     }
     return NULL;
